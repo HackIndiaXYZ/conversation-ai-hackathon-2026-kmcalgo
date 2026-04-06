@@ -72,7 +72,7 @@ KMC-Algo integrates insights from the latest AI research:
 
 ---
 
-## Simulation Overview
+## Simulation Overviews
 
 The core simulation presents an **Adaptive Multi-Stakeholder World** — an evolving environment with 5 stakeholder groups, 3 episode phases, alignment traps, and multi-objective reward structures.
 
