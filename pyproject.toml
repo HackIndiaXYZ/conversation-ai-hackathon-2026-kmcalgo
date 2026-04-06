@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kmc-algo"
+version = "0.1.0"
+description = "Adaptive environments for training aligned, multi-objective intelligence"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "naidu1212"},
+]
+keywords = [
+    "reinforcement-learning",
+    "alignment",
+    "multi-objective",
+    "kmc-algo",
+    "ai-safety",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "pydantic>=2.0",
+    "uvicorn>=0.24",
+    "fastapi>=0.104",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+demo = ["gradio>=4.0"]
+openenv = ["openenv-core>=0.2.1"]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "ruff>=0.4",
+]
+all = ["kmc-algo[demo,openenv,dev]"]
+
+[project.scripts]
+# Corrected Entry Points (No leading dots, updated to Kmcalgo folder)
+kmc-local = "main:main"
+kmc-server = "Kmcalgo.kmc_env.server:run"
+
+[tool.setuptools.packages.find]
+# Ensure only our rebranded package is included
+include = ["Kmcalgo*"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
