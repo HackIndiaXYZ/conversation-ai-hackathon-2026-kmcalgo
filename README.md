@@ -195,4 +195,6 @@ python train_grpo.py --mode unsloth --model Qwen/Qwen2.5-0.5B-Instruct --episode
 
 ## License
 
+## Auth Ankur yadav
+
 MIT License
